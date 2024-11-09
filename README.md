@@ -1,17 +1,36 @@
-O Treinador Determinado
+# O Treinador Determinado
 
-Em uma pequena cidade, havia um treinador de condicionamento físico chamado João. Ele era conhecido por sua determinação e dedicação aos seus clientes.
+class Treinador:
+    def __init__(self, nome):
+        self.nome = nome
+        self.clientes = []
 
-Um dia, um jovem chamado Pedro se aproximou de João, desanimado e sem motivação para treinar. Ele queria perder peso e melhorar sua saúde, mas não sabia por onde começar.
+    def adicionar_cliente(self, cliente):
+        self.clientes.append(cliente)
 
-João ouviu Pedro e disse: "Você não está sozinho. Vamos trabalhar juntos para alcançar seus objetivos."
+    def treinar(self, cliente):
+        print(f"{self.nome} está treinando {cliente.nome}.")
 
-Com o plano de treino personalizado de João, Pedro começou a ver resultados em apenas algumas semanas. Ele perdeu peso, ganhou confiança e encontrou um novo propósito.
+class Cliente:
+    def __init__(self, nome, objetivo):
+        self.nome = nome
+        self.objetivo = objetivo
 
-Pedro se tornou um dos clientes mais dedicados de João e logo começou a inspirar outros a fazerem o mesmo.
+    def alcançar_objetivo(self):
+        print(f"{self.nome} alcançou seu objetivo: {self.objetivo}.")
 
-João estava orgulhoso de Pedro e disse: "Você é o exemplo perfeito de que, com determinação e esforço, qualquer objetivo é alcançável."
+# Criação do treinador e cliente
+joao = Treinador("João")
+pedro = Cliente("Pedro", "Perder peso e melhorar saúde")
 
-E assim, João e Pedro continuaram a trabalhar juntos, transformando vidas e provando que a determinação pode levar a grandes conquistas.
+# Adicionando cliente ao treinador
+joao.adicionar_cliente(pedro)
 
-Fim
+# Treinamento
+joao.treinar(pedro)
+
+# Pedro alcança seu objetivo
+pedro.alcançar_objetivo()
+
+
+Este código define duas classes: Treinador e Cliente. O treinador João é criado e o cliente Pedro é adicionado a ele. Em seguida, João treina Pedro e Pedro alcança seu objetivo.
